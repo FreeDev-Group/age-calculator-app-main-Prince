@@ -6,6 +6,10 @@ const errorDay = document.getElementById("error-day");
 const errorMonth = document.getElementById("error-month");
 const errorYear = document.getElementById("error-year");
 
+const daySection = document.getElementById("day-section");
+const monthSection = document.getElementById("month-section");
+const yearSection = document.getElementById("year-section");
+
 // events listeners
 // input event
 dayInput.addEventListener("input", errorHandler);
@@ -20,6 +24,62 @@ function errorHandler() {
     - La date est dans le futur.
     - La date est invalide (par exemple, le 31 avril, car avril n'a que 30 jours).
     */
+   const currentYear = (new Date()).getFullYear();
+
+    if (dayInput.value === "") {
+        errorDay.textContent = "This field is required";
+        daySection.classList.add("error");
+    }
+    else {
+        errorDay.textContent = "";
+        daySection.classList.remove("error");
+    }
+
+    if (monthInput.value === "") {
+        errorMonth.textContent = "This field is required";
+        monthSection.classList.add("error");
+    }
+    else {
+        errorMonth.textContent = "";
+        monthSection.classList.remove("error");
+    }
+
+    if (yearInput.value === "") {
+        errorYear.textContent = "This field is required";
+        yearSection.classList.add("error");
+    }
+    else {
+        errorYear.textContent = "";
+        yearSection.classList.remove("error");
+    }
+
+    // day validation
+    if (dayInput.value < 1 || dayInput.value > 31) {
+        errorDay.textContent = "Must be a valid day";
+        daySection.classList.add("error");
+    }
+    else {
+        errorDay.textContent = "";
+        daySection.classList.remove("error");
+    }
+
+    if (monthInput.value < 1 || monthInput.value > 12) {
+        errorMonth.textContent = "Must be a valid month";
+        monthSection.classList.add("error");
+    }
+    else {
+        errorMonth.textContent = "";
+        monthSection.classList.remove("error");
+    }
+
+    if (yearInput.value < 1 || yearInput.value > currentYear) {
+        errorYear.textContent = "Must be a valid year";
+        yearSection.classList.add("error");
+    }
+    else {
+        errorYear.textContent = "";
+        yearSection.classList.remove("error");
+    }
 }
 
 function calculateAge() {
