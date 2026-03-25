@@ -15,7 +15,7 @@
     <title>Frontend Mentor | Age calculator app</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
   </head>
   <body>
     <div class="container">
@@ -24,17 +24,19 @@
           <div class="form-section">
             <label for="day">DAY</label>
             <input type="number" id="day" placeholder="DD" />
-            <span class="error-text">Must be a valid day</span>
+            <span id="error-day" class="error-text">Must be a valid day</span>
           </div>
           <div class="form-section">
             <label for="month">MONTH</label>
             <input type="number" id="month" placeholder="MM" />
-            <span class="error-text">Must be a valid month</span>
+            <span id="error-month" class="error-text"
+              >Must be a valid month</span
+            >
           </div>
-          <div class="form-section error">
+          <div class="form-section">
             <label for="year">YEAR</label>
             <input type="number" id="year" placeholder="YYYY" />
-            <span class="error-text">Must be a valid year</span>
+            <span id="error-year" class="error-text">Must be a valid year</span>
           </div>
         </div>
 
@@ -45,9 +47,9 @@
         </div>
 
         <div class="result">
-          <p id="years"><span class="result-value">--</span> years</p>
-          <p id="months"><span class="result-value">--</span> months</p>
-          <p id="days"><span class="result-value">--</span> days</p>
+          <p><span id="years" class="result-value">--</span> years</p>
+          <p><span id="months" class="result-value">--</span> months</p>
+          <p><span id="days" class="result-value">--</span> days</p>
         </div>
       </div>
     </div>
@@ -61,5 +63,7 @@
         >Prince'i</a
       >.
     </div>
+
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
