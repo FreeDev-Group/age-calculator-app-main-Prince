@@ -8,6 +8,11 @@
   --neutral-charcoal-grey: hsl(0, 0%, 8%);
 }
 
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-ExtraBold.ttf") format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -25,15 +30,16 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 20px;
 }
 
 .card {
   background-color: var(--neutral-white);
-  border-radius: 20px 20px 70px 20px;
-  padding: 20px;
+  border-radius: 20px 20px 180px 20px;
+  padding: 40px;
+  width: 500px;
 }
 
 .form-group {
@@ -46,6 +52,8 @@ body {
   padding: 10px;
   border: 1px solid var(--neutral-light-grey);
   border-radius: 5px;
+  font-weight: normal;
+  font-family: "Poppins", sans-serif;
 }
 
 .form-section {
@@ -56,6 +64,12 @@ body {
 .form-section label {
   font-size: 0.8em;
   font-weight: bold;
+}
+
+.form-section label {
+  font-size: 0.6em;
+  color: var(--neutral-smoky-grey);
+  padding-bottom: 5px;
 }
 
 .form-button-layer {
@@ -77,29 +91,48 @@ body {
   background-color: var(--primary-purple);
   color: var(--neutral-white);
   cursor: pointer;
-  padding: 10px;
+  padding: 15px;
+  margin: 0px;
+}
+
+.form-group button:hover {
+  background-color: var(--neutral-charcoal-grey);
+}
+
+.form-group button img {
+  width: 28px;
 }
 
 .result {
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .result p {
-  font-size: 2em;
+  font-size: 3em;
   font-weight: bold;
+}
+
+.result-value {
+  color: var(--primary-purple);
 }
 
 .error {
   color: var(--primary-red);
 }
 
-.error-border {
+.error label {
+  color: var(--primary-red);
+}
+
+.error input {
   border-color: var(--primary-red);
+  color: var(--primary-red);
+  font-weight: bold;
 }
 
 .error-text {
   color: var(--primary-red);
-  font-size: 0.8em;
+  font-size: 0.6em;
 }
 
 .error-text::before {
@@ -110,4 +143,16 @@ body {
   .form-group {
     flex-direction: column;
   }
+}
+
+.attribution {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8em;
+  color: var(--neutral-smoky-grey);
+}
+
+.attribution a {
+  color: var(--primary-purple);
+  text-decoration: none;
 }
