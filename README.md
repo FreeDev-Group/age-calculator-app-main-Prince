@@ -39,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/age-calculator-app-solution-exactage-2yfKcdCKCg)
-- Live Site URL: [Add live site URL here](https://freedev-group.github.io/age-calculator-app-main-Prince/)
+- Solution URL: [Age Calculator App Solution](https://www.frontendmentor.io/solutions/age-calculator-app-solution-exactage-2yfKcdCKCg)
+- Live Site URL: [Age Calculator App](https://freedev-group.github.io/age-calculator-app-main-Prince/)
 
 ## My process
 
