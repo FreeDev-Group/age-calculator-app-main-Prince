@@ -18,7 +18,7 @@ yearInput.addEventListener("input", errorHandler);
 
 function errorHandler() {
     let isValid = true;
-    const currentYear = (new Date()).getFullYear();
+    const currentYear = (new Date()).setFullYear(2026);
 
     // Day validation
     if (dayInput.value === "") {
@@ -86,7 +86,7 @@ function errorHandler() {
         }
 
         if (isValid) {
-            calculateAge();
+            // calculateAge();
         }
     }
 }
@@ -129,7 +129,6 @@ function calculateAge() {
     }
 
     // Call the animation for each result element
-    console.log(years, months, days, years);
     animateNumber(document.getElementById("years"), years);
     animateNumber(document.getElementById("months"), months);
     animateNumber(document.getElementById("days"), days);
