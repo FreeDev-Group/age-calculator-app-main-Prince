@@ -37,11 +37,9 @@ Users should be able to:
 
 ![screenshot](./screenshot.png)
 
-_(Don't forget to take a screenshot of your final app, name it `screenshot.png` and put it at the root of your project.)_
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://freedev-group.github.io/age-calculator-app-main-Prince/)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/age-calculator-app-solution-exactage-2yfKcdCKCg)
 - Live Site URL: [Add live site URL here](https://freedev-group.github.io/age-calculator-app-main-Prince/)
 
 ## My process
