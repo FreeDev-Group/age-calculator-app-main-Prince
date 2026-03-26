@@ -1,6 +1,6 @@
 # Frontend Mentor - Age calculator app solution
 
-This is a solution to the [Age calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Age calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -15,9 +15,6 @@ This is a solution to the [Age calculator app challenge on Frontend Mentor](http
   - [Useful resources](#useful-resources)
   - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -38,15 +35,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![screenshot](./screenshot.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+*(Don't forget to take a screenshot of your final app, name it `screenshot.png` and put it at the root of your project.)*
 
 ### Links
 
@@ -58,73 +49,64 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- CSS custom properties (variables)
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Vanilla JavaScript (DOM manipulation and constraints validation)
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+While working on this project, I significantly improved my **JavaScript** skills. I learned how to manipulate dates, handle complex form validations, and implement asynchronous UI animations (number counter).
 
-To see how you can add code snippets, see below:
+One of the biggest challenges (and the best lesson) was validating impossible dates like "April 31st". The native JavaScript `Date` object tends to "fix" these errors by rolling over to the next month automatically (May 1st). 
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+Here is how I tackled the challenge of implementing smooth animations for the results:
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+function animateNumber(element, target) {
+    let current = 0;
+    // Set a speed so the animation doesn't take too long (e.g., 20ms)
+    const interval = setInterval(() => {
+        if (current >= target) {
+            element.textContent = target;
+            clearInterval(interval);
+        } else {
+            current++;
+            element.textContent = current;
+        }
+    }, 20);
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+I also managed the error messages cleanly and updated the UI dynamically using CSS:
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+```css
+.error span {
+  color: var(--primary-red);
+  font-size: 0.6em;
+}
+
+.error span::before {
+  content: "⚠ ";
+}
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+In my future projects, I want to focus more on complex JavaScript animations and best practices for structuring CSS code in larger applications, such as using the BEM methodology.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [MDN Web Docs - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) - Essential for understanding how the JavaScript Date object works, especially for dealing with leap years and the number of days per month.
 
 ### AI Collaboration
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
-
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
-
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
+During this project, I paired with an AI coding mentor. It was extremely helpful for:
+- Understanding why my CSS colors and pseudo-elements weren't applying initially (learning CSS Variables and Specificity).
+- Explaining the JavaScript Date "1900 trap" (where two-digit years like '24' are treated as '1924') and helping me debug my logic.
+- Understanding Git commands, such as how to undo a commit safely (`git reset`).
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- GitHub - [Prince'i](https://github.com/hacp0102)
+- Frontend Mentor - [@hacp0102](https://www.frontendmentor.io/profile/hacp0102)
